@@ -1,0 +1,15 @@
+.container {
+  height: 100%;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 2rem;
+}
+
+@media screen and (min-width: var(--mobile)) {
+  .nav {
+    flex-wrap: nowrap;
+  }
+}

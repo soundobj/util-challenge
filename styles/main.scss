@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+:root {
+  --navy: #111144;
+  --red: #FA224B;
+  --beige: #FEF1E9;
+  --green: #37D390;
+  --purple: #6969DA;
+  --pink: #FA6380;
+  --mobile: 440px;
+}
+
+body {
+  font-family: 'Work Sans', cursive;
+  background: var(--navy);
+}
