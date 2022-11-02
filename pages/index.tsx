@@ -1,11 +1,28 @@
 import Head from 'next/head'
-// import Image from 'next/image'
+import axios from "axios"
 
 import styles from '@/pages/index.module.scss'
 import Search from '@/components/Search/Search'
 import Logo from '@/components/Logo/Logo'
 
+import { FUNDS_AS_ARRAY } from '../consts'
+import { useState } from 'react'
+
 export default function Home() {
+
+  const [sustainabiltyPerformance, setSustainbilityPerformance] = useState();
+  const [fetchError, setFetchError] = useState();
+
+  const onOptionSelected = async (option: string) => {
+    console.log('searchTerm', option);
+    axios.get(`http://localhost:3000/api/sustainabiltyPerformance?id=${option}`)
+      .then((response) => setSustainbilityPerformance(response.data))
+      .catch((error) => setFetchError(error))
+  }
+
+  console.log('sus performance', sustainabiltyPerformance);
+  console.log('error', fetchError);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -14,8 +31,9 @@ export default function Home() {
       </Head>
       <main>
         <nav className={styles.nav}>
-          <Logo />
-          <Search className={styles.search} />
+          <Logo className={styles.logo} />
+          <Search onOptionSelected={onOptionSelected} suggestions={FUNDS_AS_ARRAY} />
+          {/* @TODO use https://recharts.org/en-US/ */}
         </nav>
       </main>
     </div>

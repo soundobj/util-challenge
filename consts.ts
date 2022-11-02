@@ -26,4 +26,4 @@ export const FUNDS = new Map<string, Fund>([
   ['0003Y5M.NP', { name: 'Edgewood Growth Fund', id: '0003Y5M.NP' }],
 ]);
 
-export const FUNDS_AS_ARRAY = Array.from(FUNDS.values());
+export const FUNDS_AS_ARRAY = Array.from(FUNDS.values())

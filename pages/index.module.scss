@@ -1,15 +1,22 @@
+$mobileBreakpoint: 440px;
+
 .container {
   height: 100%;
 }
 
 .nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin: 1rem 2rem;
 }
 
-@media screen and (min-width: var(--mobile)) {
+@media (max-width: $mobileBreakpoint) {
   .nav {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+
+    .logo {
+      margin-bottom: 1rem;
+    }
   }
+ 
 }
