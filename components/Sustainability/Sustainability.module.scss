@@ -1,0 +1,22 @@
+@import '../../styles/vars.scss';
+
+.nav {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 1rem 2rem;
+}
+
+@media (max-width: $mobileBreakpoint) {
+  .nav {
+    flex-wrap: wrap;
+
+    .logo {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.spinner {
+  margin: 0 auto;
+  margin-top: 30em;
+}

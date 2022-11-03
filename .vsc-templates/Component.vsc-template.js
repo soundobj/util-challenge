@@ -25,7 +25,7 @@
   import React from 'react'
   import styles from './${camelize(inputs.name)}.module.scss'
 
-  const ${camelize(inputs.name)} = (props: ${camelize(inputs.name)}) => {
+  const ${camelize(inputs.name)} = (props: ${camelize(inputs.name)}Props) => {
   
   return (
     <div className={styles.${lowerCaseFirstLetter(inputs.name)}}>
@@ -34,7 +34,7 @@
   )
 }
 
-export interface ${camelize(inputs.name)} {
+export interface ${camelize(inputs.name)}Props {
 
 }
 

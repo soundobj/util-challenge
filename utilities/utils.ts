@@ -1,6 +1,8 @@
 import groupBy from 'lodash/groupBy'
 import uniqBy from 'lodash/uniqBy'
 
+import { StringOrNumberTupple, SDG_RECORD } from '../consts'
+
 export const filterArrayByText = <T extends { name: string }>(array: Array<T>, text: string): Array<T> => array.filter(
   item =>
     !text ||
@@ -9,13 +11,15 @@ export const filterArrayByText = <T extends { name: string }>(array: Array<T>, t
       .includes(text.toLowerCase())
 );
 
-export type StringOrNumberTupple = (string | number)[][];
-
 export const groupBySDG = (rows: StringOrNumberTupple) => {
-  const sdgGrouped = groupBy(rows, item => item[2])
+  /* 
+    tupple structure 
+    [util_id, date, impact_area, unit, methodology, positive_aligment, negative_aligment]
+  */
+  const sdgGrouped = groupBy(rows, item => item[2]) // impact_area
   const uniqueByDate = Object.keys(sdgGrouped)
-    .reduce((acc: Record<string, StringOrNumberTupple>, cur): Record<string, StringOrNumberTupple> => {
-      acc[cur] = uniqBy(sdgGrouped[cur], item => item[1])
+    .reduce((acc: SDG_RECORD, cur): SDG_RECORD => {
+      acc[cur] = uniqBy(sdgGrouped[cur], item => item[1]) // date
       return acc
     }, {})
   return uniqueByDate;

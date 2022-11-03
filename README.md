@@ -27,3 +27,8 @@ pnpm create next-app --example with-jest with-jest-app
 ```bash
 npm test
 ```
+
+## TODOS
+
+- holdings data integration not completed due to time constraints
+- API error handling not implemented due to time constraints

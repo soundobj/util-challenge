@@ -27,3 +27,17 @@ export const FUNDS = new Map<string, Fund>([
 ]);
 
 export const FUNDS_AS_ARRAY = Array.from(FUNDS.values())
+
+export type StringOrNumberTupple = (string | number)[][];
+
+export type SustainabilityPerformancePayload = {
+  data: {
+    data: {
+      datarows: {
+        rows: StringOrNumberTupple,
+      }
+    }
+  }
+}
+
+export type SDG_RECORD = Record<string, StringOrNumberTupple>
