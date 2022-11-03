@@ -37,7 +37,6 @@ const Sustainability = (props: SustainabilityProps) => {
         <Search onOptionSelected={onOptionSelected} suggestions={FUNDS_AS_ARRAY} />
       </nav>
       <main className={styles.main}>
-        {/* @TODO use https://recharts.org/en-US/ */}
         {sustainabilityLoading &&
           <Spinner className={styles.spinner} />
         }
