@@ -7,7 +7,7 @@ dotenv.config();
 export type Response = {
 } 
 
-const getSustainabilityPerformanceURL = (fundId: string) => `${process.env.API_BASE_URL}/funds/${fundId}/analytics?api-key=${process.env.API_KEY}`
+const getSustainabilityURL = (fundId: string) => `${process.env.API_BASE_URL}/funds/${fundId}/analytics?api-key=${process.env.API_KEY}`
 
 export default function handler(
   _req: NextApiRequest,
@@ -20,7 +20,7 @@ export default function handler(
   }
 console.log('q', _req.query);
 
-  axios.get(getSustainabilityPerformanceURL(id))
+  axios.get(getSustainabilityURL(id))
   .then((response) => {
     return res.status(200).json(response.data)
   })
