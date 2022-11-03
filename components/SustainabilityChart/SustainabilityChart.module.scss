@@ -1,31 +1,46 @@
+$radius: 3px;
+$border: var(--beige) 1px solid;
 
 .sustainabilityChart {
-  margin-top: 2rem;
+  margin: 0 1rem;
   color: var(--beige);
-
-  dl {
-    display: flex;
-    align-items: center;
-
-    dd {
-      margin: 0;
-
-      ul {
-        margin: 0;
-        padding: 0;
-      }
-    }
-  }
-
   .sdgs {
-    display: flex;
-  }
+    border: none;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 
-  .sdg {
-    list-style: none;
+    input:first-of-type {
+      border-top-left-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
 
-    &:hover {
-      color: var(--red);
+    input:last-of-type {
+      border-top-right-radius: $radius;
+      border-bottom-right-radius: $radius;
+      border: $border;
+    }
+
+    legend {
+      margin-bottom: 0.5rem;
+    }
+    input {
+      color: var(--beige);
+      appearance: none;
+      background: var(--purple);
+      padding: .5rem;
+      border: $border;
+      border-right: none;
+      width: 2rem;
+      text-align: center;
+
+      cursor: pointer;
+      &::before {
+        content:attr(data-label);
+      }
+
+      &:checked {
+        background: var(--red);
+      }
     }
   }
 }

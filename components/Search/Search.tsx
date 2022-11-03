@@ -20,6 +20,7 @@ const Search = (props: SearchProps<Fund>) => {
       <Downshift
         itemToString={item => (item ? item.name : "")}
         id="searchSuggestions"
+        onSelect={(selected) => onOptionSelected(selected.id)}
       >
         {({
           selectedItem,

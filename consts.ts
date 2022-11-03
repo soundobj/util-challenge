@@ -51,3 +51,23 @@ export type SustainabilityData = {
   positive_aligment: (string | number)
   negative_aligment: (string | number)
 }
+
+export const SDG_NAMES = new Map<string, string>([
+  ["SDG 01", "No Poverty"],
+  ["SDG 02", "Zero Hunger"],
+  ["SDG 03", "Good Health & Well-Being"],
+  ["SDG 04", "Quality Education"],
+  ["SDG 05", "Gender Equality"],
+  ["SDG 06", "Clean Water & Sanitation"],
+  ["SDG 07", "Affordable & Clean Energy"],
+  ["SDG 08", "Decent Work & Economic Growth"],
+  ["SDG 09", "Industry Innovation & Infrastructure"],
+  ["SDG 10", "Reduce Inequalities"],
+  ["SDG 11", "Sustainable Cities & Communities"],
+  ["SDG 12", "Responsible Consumption and Production"],
+  ["SDG 13", "Climate Action"],
+  ["SDG 14", "Life Below Water"],
+  ["SDG 15", "Life On Land"],
+  ["SDG 16", "Peace Justice and Strong Institutions"],
+  ["SDG 17", "Partnership for the Goals"],
+])

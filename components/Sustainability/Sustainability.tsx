@@ -20,7 +20,6 @@ const Sustainability = (props: SustainabilityProps) => {
   const [sustainabilityLoading, setSustainabilityLoading] = useState<boolean>(false)
 
   const onOptionSelected = async (option: string) => {
-    console.log('searchTerm', option);
     setSustainabilityLoading(true)
     axios.get(`http://localhost:3000/api/sustainability?id=${option}`)
       .then((response: SustainabilityPerformancePayload) => {
@@ -30,8 +29,6 @@ const Sustainability = (props: SustainabilityProps) => {
       .catch((error) => setSustainabilityError(error))
       .finally(() => setSustainabilityLoading(false))
   }
-
-  console.log('sus performance', sustainability)
 
   return (
     <>

@@ -18,7 +18,6 @@ export default function handler(
   if (!id || typeof id !== 'string') {
     return res.status(500).json({ error: 'no fund id provided' })
   }
-console.log('q', _req.query);
 
   axios.get(getSustainabilityURL(id))
   .then((response) => {
