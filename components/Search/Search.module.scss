@@ -15,6 +15,7 @@ $searchPadding: 1rem 0.5rem;
     position: absolute;
     background: white;
     left: 1px;
+    z-index: 1;
   }
 
   &, input, .downshiftDropdown {

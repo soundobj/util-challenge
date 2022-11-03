@@ -1,4 +1,31 @@
 
 .sustainabilityChart {
-  background-color: pink;
+  margin-top: 2rem;
+  color: var(--beige);
+
+  dl {
+    display: flex;
+    align-items: center;
+
+    dd {
+      margin: 0;
+
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  .sdgs {
+    display: flex;
+  }
+
+  .sdg {
+    list-style: none;
+
+    &:hover {
+      color: var(--red);
+    }
+  }
 }

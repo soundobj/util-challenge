@@ -41,3 +41,13 @@ export type SustainabilityPerformancePayload = {
 }
 
 export type SDG_RECORD = Record<string, StringOrNumberTupple>
+
+export type SustainabilityData = {
+  util_id: (string | number)
+  date: (string | number)
+  impact_area: (string | number)
+  unit: (string | number)
+  methodology: (string | number)
+  positive_aligment: (string | number)
+  negative_aligment: (string | number)
+}

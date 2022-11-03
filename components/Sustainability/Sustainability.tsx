@@ -7,7 +7,9 @@ import Logo from '@/components/Logo/Logo'
 
 import { FUNDS_AS_ARRAY, SustainabilityPerformancePayload, SDG_RECORD } from '../../consts'
 import { groupBySDG } from '../../utilities/utils'
+
 import Spinner from '../Spinner/Spinner'
+import SustainabilityChart from '../SustainabilityChart/SustainabilityChart'
 
 import styles from './Sustainability.module.scss'
 
@@ -30,7 +32,6 @@ const Sustainability = (props: SustainabilityProps) => {
   }
 
   console.log('sus performance', sustainability)
-  console.log('loading', sustainabilityLoading)
 
   return (
     <>
@@ -38,9 +39,14 @@ const Sustainability = (props: SustainabilityProps) => {
         <Logo className={styles.logo} />
         <Search onOptionSelected={onOptionSelected} suggestions={FUNDS_AS_ARRAY} />
       </nav>
-      <main>
+      <main className={styles.main}>
         {/* @TODO use https://recharts.org/en-US/ */}
-        {sustainabilityLoading && <Spinner className={styles.spinner} />}
+        {sustainabilityLoading &&
+          <Spinner className={styles.spinner} />
+        }
+        {(!sustainabilityLoading && sustainability) &&
+          <SustainabilityChart sdgs={sustainability} />
+        }
       </main>
     </>
   )

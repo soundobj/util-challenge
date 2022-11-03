@@ -1,5 +1,5 @@
 
-import React, { MouseEvent } from 'react'
+import React from 'react'
 import Downshift from "downshift";
 
 import { Fund } from '../../consts'
@@ -7,14 +7,11 @@ import { filterArrayByText } from '../../utilities/utils'
 
 import styles from './Search.module.scss'
 
-const DATA_ID = "data-id"
-
 const Search = (props: SearchProps<Fund>) => {
   const { suggestions, onOptionSelected } = props;
 
-  const onOptionSelect = (event: MouseEvent<HTMLDivElement>) => {
-    // @ts-ignore
-    const fundID = event.target.getAttribute(DATA_ID);
+  const onOptionSelect = (event: any) => {
+    const fundID = event?.target?.getAttribute("data-id");
     onOptionSelected(fundID); 
   }
 

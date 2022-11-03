@@ -1,7 +1,7 @@
 import groupBy from 'lodash/groupBy'
 import uniqBy from 'lodash/uniqBy'
 
-import { StringOrNumberTupple, SDG_RECORD } from '../consts'
+import { StringOrNumberTupple, SDG_RECORD, SustainabilityData } from '../consts'
 
 export const filterArrayByText = <T extends { name: string }>(array: Array<T>, text: string): Array<T> => array.filter(
   item =>
@@ -24,3 +24,16 @@ export const groupBySDG = (rows: StringOrNumberTupple) => {
     }, {})
   return uniqueByDate;
 }
+
+export const mapTupplesToKeys = (rows: StringOrNumberTupple): SustainabilityData[] => rows.map((row) => {
+  const [util_id, date, impact_area, unit, methodology, positive_aligment, negative_aligment] = row;
+  return {
+    util_id,
+    date,
+    impact_area,
+    unit,
+    methodology,
+    positive_aligment,
+    negative_aligment,
+  }
+})  
