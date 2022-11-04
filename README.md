@@ -8,7 +8,7 @@ This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScri
 
 npm run test starts NestJS server on localhost:3000
 
-you need to add your 'API_BASE_URL' and 'API_KEY' to the .env file. I've used the nextAPI so the client do not see the key
+you need to add your `API_BASE_URL` and `API_KEY` to an `.env file`. I've used the nextAPI so the client do not see the key
 
 
 ```
